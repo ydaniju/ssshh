@@ -2,9 +2,9 @@
   "name": "ssshh",
   "version": "1.0.0",
   "description": "SSH client ",
-  "main": "main.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "tsc && electron .",
     "test": "test"
   },
   "repository": {
@@ -17,9 +17,13 @@
   "author": "Yusuf Daniju",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.10.0",
     "@types/node": "^22.5.5",
     "electron": "32.1.0",
-    "typescript": "^5.6.2"
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.5.0"
   },
   "dependencies": {
     "winston": "^3.14.2"
