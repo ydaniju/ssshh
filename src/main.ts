@@ -1,9 +1,13 @@
-const { app, BrowserWindow } = require('electron')
-const { createLogger, format, transports } = require('winston')
-const path = require('node:path')
+import { app, BrowserWindow } from 'electron'
+import { createLogger, format, transports } from 'winston'
+import type {
+  ConsoleTransportInstance,
+  FileTransportInstance,
+} from 'winston/lib/winston/transports'
+import * as path from 'path'
 
 const getTransports = () => {
-  const baseTransports = [
+  const baseTransports: (FileTransportInstance | ConsoleTransportInstance)[] = [
     new transports.File({
       filename: `${app.getPath('appData')}/error.log`,
       level: 'error',
@@ -34,7 +38,7 @@ const createWindow = () => {
     height: 600,
     width: 800,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, 'preload.ts'),
     },
   })
 
