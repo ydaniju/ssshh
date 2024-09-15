@@ -1,7 +1,7 @@
 {
   "name": "ssshh",
   "version": "1.0.0",
-  "description": "SSH client ",
+  "description": "SSH client",
   "main": "./dist/src/main.js",
   "engines": {
     "node": ">=20.9.0 <21.0.0",
